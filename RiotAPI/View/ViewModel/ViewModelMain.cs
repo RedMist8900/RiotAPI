@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RiotAPI.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -21,13 +22,14 @@ namespace RiotAPI.View.ViewModel
         public string Region
         {
             get { return region; }
-            set { region = value; RaisePropertyChanged("Region"); }
+            set { region = value; Constants.Region = value; RaisePropertyChanged("Region"); }
         }
 
         string summonerName;
         public string SummonerName
         {
-
+            get { return summonerName; }
+            set { summonerName = value; RaisePropertyChanged("SummonerName"); }
         }
     }
 }
