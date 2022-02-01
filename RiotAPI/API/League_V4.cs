@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RiotAPI.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,9 +12,21 @@ namespace RiotAPI.API
         {
         }
 
-        public List<PositionDTO> GetPositions(int summonerId)
+        public List<PositionDTO> GetPosition(string summonerId)
         {
+            string path = "league/v4/positions/by-summoner/" + summonerId;
 
+            var response = GET(GetURI(path));
+            string content = response.Content.ReadAsStringAsync().Result;
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return JsonConvert.DeserializeObject<List<PositionDTO>>(content);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

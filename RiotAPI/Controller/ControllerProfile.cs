@@ -1,8 +1,10 @@
-﻿using RiotAPI.Model;
+﻿using RiotAPI.API;
+using RiotAPI.Model;
 using RiotAPI.Utils;
 using RiotAPI.View.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RiotAPI.Controller
@@ -12,19 +14,26 @@ namespace RiotAPI.Controller
         public object GetContext()
         {
             var summoner = Constants.Summoner;
-            var position = GetPosition(summoner);
+            //var position = GetPosition(summoner);
 
-            return new ViewModelProfile(summoner.Name, summoner.ProfileId, summoner.SummonerLevel, position.Tier, position.Rank,
-                position.Wins, position.Losses);
+            return new ViewModelProfile(summoner.Name, summoner.ProfileIconID, summoner.SummonerLevel, summoner.RevisionDate, summoner.AccountID, summoner.ID, summoner.PuuID);
         }
 
-        private PositionDTO GetPosition(SummonerDTO summoner)
+        //private SummonerDTO GetSummoner(SummonerDTO summoner)
+        //{
+        //    Summoner_V4 summoner_V4 = new Summoner_V4(Constants.Region);
+
+        //    var summoner = summoner_V4.GetSummonerByName(summonerName);
+
+        //    Constants.Summoner = summoner;
+
+        //    return position ?? new PositionDTO();
+        //}
+
+        public void OpenMain()
         {
-            League_V4 league = new League_V4(Constants.Region);
-
-            var position = league.GetPosition(summoner.Id).Where(position => position.QueueType.Equals("RANKED_SOLO_5X5")).FirstOrDefault();
-
-            return position ?? new PositionDTO();
+            MainWindow profile = new MainWindow();
+            profile.Show();
         }
     }
 }

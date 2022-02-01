@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 
@@ -12,7 +13,7 @@ namespace RiotAPI.API
         public Api(string region)
         {
             Region = region;
-            Key = GetKey("Api.txt");
+            Key = GetKey("C:/Users/niko341n/source/repos/RiotAPI/RiotAPI/API/Key.txt");
         }
         protected HttpResponseMessage GET(string URL)
         {

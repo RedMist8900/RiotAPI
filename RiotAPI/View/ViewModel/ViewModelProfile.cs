@@ -8,24 +8,22 @@ namespace RiotAPI.View.ViewModel
     public class ViewModelProfile
     {
         public string SummonerName { get; private set; }
-        public string Icon { get; private set; }
-        public long Level { get; private set; }
-        public string Tier { get; private set; }
-        public string Rank { get; private set; }
-        public string Emblem { get; private set; }
-        public int Wins { get; private set; }
-        public int Losses { get; private set; }
+        public string ProfileIconId { get; private set; }
+        public long SummonerLevel { get; private set; }
+        public long RevisionDate { get; private set; }
+        public string AccountId { get; private set; }
+        public string Id { get; private set; }
+        public string PuuID { get; private set; }
 
-        public ViewModelProfile(string summonerName, int icon, long level, string tier, string rank, string emblem, int wins, int losses)
+        public ViewModelProfile(string summonerName, int icon, long level, long revision, string accountid, string id, string puuid)
         {
             SummonerName = summonerName;
-            Icon = "http://opgg-static.akamaized.net/images/profile_icons/profileIcon" + icon + ".jpg";
-            Level = level;
-            Tier = tier;
-            Rank = rank;
-            Emblem = "Assets/emblems/emblem_" + tier + ".png";
-            Wins = wins;
-            Losses = losses;
+            ProfileIconId = "" + icon + "";
+            SummonerLevel = level;
+            RevisionDate = revision;
+            Id = id;
+            AccountId = accountid;
+            PuuID = puuid;
         }
     }
 }
