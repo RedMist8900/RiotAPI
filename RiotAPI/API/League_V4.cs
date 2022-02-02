@@ -14,7 +14,7 @@ namespace RiotAPI.API
 
         public List<PositionDTO> GetPosition(string summonerId)
         {
-            string path = "league/v4/positions/by-summoner/" + summonerId;
+            string path = "league/v4/entries/by-summoner/" + summonerId;
 
             var response = GET(GetURI(path));
             string content = response.Content.ReadAsStringAsync().Result;

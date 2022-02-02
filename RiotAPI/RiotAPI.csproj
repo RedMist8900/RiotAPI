@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\emblems\" />
+    <None Remove="Assets\logo2.png" />
+    <None Remove="View\logo2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\logo2.png" />
+    <Resource Include="View\logo2.png" />
   </ItemGroup>
 
 </Project>

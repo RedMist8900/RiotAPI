@@ -19,17 +19,17 @@
                 <TextBlock Margin="20 15" FontSize="30" Text="{Binding Path=SummonerName}" Foreground="DarkGray"/>
                 <StackPanel Orientation="Horizontal" Margin="20 0">
                     <StackPanel Margin="5">
-                        <TextBlock Text="AccountID" FontSize="15" FontWeight="Bold" Foreground="Green"/>
-                        <TextBlock Text="{Binding Path=AccountId}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Wins" FontSize="15" FontWeight="Bold" Foreground="Green"/>
+                        <TextBlock Text="{Binding Path=Wins}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <TextBlock Text="LOSSES" FontSize="15" FontWeight="Bold" Foreground="DarkRed"/>
-                        <!--<TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>-->
+                        <TextBlock Text="{Binding Path=Losses}" FontSize="18" Foreground="Gray" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="30 10">
-                    <TextBlock Text="SummonerLEVEL" FontSize="15" Foreground="LightGray"/>
-                    <TextBlock Text="{Binding Path=SummonerLevel}" HorizontalAlignment="Center" FontSize="50" Foreground="Gray"/>
+                    <TextBlock Text="LEVEL" FontSize="15" Foreground="LightGray" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding Path=Level}" HorizontalAlignment="Center" FontSize="50" Foreground="Gray"/>
                 </StackPanel>
                 <StackPanel Margin="20 10">
                     
@@ -43,14 +43,14 @@
             </StackPanel>
         </Border>
         <StackPanel HorizontalAlignment="Right" Margin="30 10">
-            <!--<Image Source="{Binding Path=Emblem}" Width="200" Height="200">
+            <Image Source="{Binding Path=Emblem}" Width="200" Height="200">
                 <Image.Effect>
                     <DropShadowEffect BlurRadius="40" ShadowDepth="1"/>
                 </Image.Effect>
-            </Image>-->
+            </Image>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <!--<TextBlock FontSize="18" Foreground="Gray" Text="{Binding Path=Tier}" Margin="5" VerticalAlignment="Center"/>
-                <TextBlock FontSize="20" Foreground="Gray" Text="{Binding Path=Rank}" Margin="5"/>-->
+                <TextBlock FontSize="18" Foreground="Gray" Text="{Binding Path=Tier}" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock FontSize="20" Foreground="Gray" Text="{Binding Path=Rank}" Margin="5"/>
             </StackPanel>
         </StackPanel>
     </Grid>

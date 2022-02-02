@@ -11,5 +11,10 @@ namespace RiotAPI.Model
         public int Wins { get; set; }
         public int Losses { get; set; }
         public string QueueType { get; set; }
+        public int LeaguePoints { get; set; }
+        public Boolean HotStreak { get; set; }
+        public Boolean Veteran { get; set; }
+        public Boolean FreshBlood { get; set; }
+        public Boolean Inactive { get; set; }
     }
 }

@@ -25,12 +25,12 @@ namespace RiotAPI
     {
         ControllerMain controller;
         ViewModelMain viewModel;
+        
         public MainWindow()
         {
             controller = new ControllerMain();
             viewModel = new ViewModelMain();
             InitializeComponent();
-
             this.DataContext = viewModel;
         }
 

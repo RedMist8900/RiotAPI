@@ -14,21 +14,22 @@ namespace RiotAPI.Controller
         public object GetContext()
         {
             var summoner = Constants.Summoner;
-            //var position = GetPosition(summoner);
+            var position = GetPosition(summoner);
 
-            return new ViewModelProfile(summoner.Name, summoner.ProfileIconID, summoner.SummonerLevel, summoner.RevisionDate, summoner.AccountID, summoner.ID, summoner.PuuID);
+            return new ViewModelProfile(summoner.Name, summoner.ProfileIconID, summoner.SummonerLevel, position.Tier, position.Rank,
+                position.Wins, position.Losses);
         }
 
-        //private SummonerDTO GetSummoner(SummonerDTO summoner)
-        //{
-        //    Summoner_V4 summoner_V4 = new Summoner_V4(Constants.Region);
+        private PositionDTO GetPosition(SummonerDTO summoner)
+        {
+            League_V4 league = new League_V4(Constants.Region);
 
-        //    var summoner = summoner_V4.GetSummonerByName(summonerName);
+            var position = league.GetPosition(summoner.ID).Where(p => p.QueueType.Equals("RANKED_SOLO_5x5")).FirstOrDefault();
 
-        //    Constants.Summoner = summoner;
+            Constants.Summoner = summoner;
 
-        //    return position ?? new PositionDTO();
-        //}
+            return position ?? new PositionDTO();
+        }
 
         public void OpenMain()
         {
